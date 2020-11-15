@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PHP search</title>
+</head>
+<body>
+
+<img src="logoprint.png">
+
+</body>
+</html>
+
+
+<?php 
+
+
+require 'bd.php';
+
+print_data($result_data);
+
+?>
+
+
