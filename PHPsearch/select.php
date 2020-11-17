@@ -28,7 +28,13 @@
             }
          	  echo '<h3>You selected:</h3> ',$t,'<br />';}
            }
+
+   
 ?>
+
+
+
+
 
 </body>
 </html>

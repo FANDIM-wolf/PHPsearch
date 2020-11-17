@@ -1,37 +1,22 @@
+
 <!DOCTYPE html>
 <html>
 <head>
 	<title>PHP search</title>
 </head>
 <body>
-<style type="text/css">
 	
-#logo{
 
-margin-left:300px;
 
-}
-#line{
-	margin-left: 350px;
-}	
-
-</style>	
-
-<div id="logo">
-        <img src="phplogo.png" width="600" height="300">
-</div>
-<div id="line"> 
-<form name="search_form" method="get">
-    <input type="search" name="search_line" size="70" placeholder="Write , What topic do you need ?">
-    <input type="submit" name="">
-</form>
-</div>
 <br>
 </body>
 </html>
 
 
 <?php 
+
+
+;
 //shows result of  request 
 
 //names of availiable articles 
@@ -74,6 +59,7 @@ print_data($result_data);
 
 
 $mysqli->close(); //close connection to db 
+
 
 
 
