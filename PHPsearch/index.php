@@ -64,6 +64,12 @@ elseif (isset($_GET['search_line']) && $_GET['search_line'] == 'insert_log') {
 
 
 }
+elseif(isset($_GET['search_line']) && $_GET['search_line'] == 'upload'){
+  require "upload.php";
+}
+elseif(isset($_GET['search_line']) && $_GET['search_line'] == 'upload function'){
+  header("Location:upload.php");
+}
 
 
 
@@ -91,7 +97,9 @@ function get_client_ip() {
     return $ipaddress;
 }
 
-$ip_coordinates =  get_client_ip();
+
+
+
 
 
   ?>
