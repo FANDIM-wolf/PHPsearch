@@ -43,7 +43,13 @@ margin-left:300px;
 	//echo "Parametr had no found";
 //}
 
+for($i=1;$i<=4;$i++){
+  if(!isset($_GET['id']) || $i=$_GET['id']){
+     
+     echo '<a href="?id='.$i.'">'.$i.'</a>';
 
+  }
+}
 
 if(isset($_GET['search_line']) && $_GET['search_line'] == 'select'){
 	
@@ -70,8 +76,12 @@ elseif(isset($_GET['search_line']) && $_GET['search_line'] == 'upload'){
 elseif(isset($_GET['search_line']) && $_GET['search_line'] == 'upload function'){
   header("Location:upload.php");
 }
-
-
+elseif(isset($_GET['search_line']) && $_GET['search_line'] == 'table of multiplation'){
+  header("Location:tableofmultiplation.php");
+}
+elseif(isset($_GET['search_line']) && $_GET['search_line'] == 'numbers of hidding'){
+  header("Location:numbers_of_hidding.php");
+}
 
 ?>
 
