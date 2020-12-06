@@ -27,11 +27,23 @@
 
 <?php
 
-$result_of_search = $_GET['result_search_in_jevais'];
-function search_result($variable){
-    if($variable == "hello"){
-        echo "*****************";
-    }
+
+//search in data base 
+function search_result(){
+   //connect to data base 
+
+   $result_of_search = $_GET['result_search_in_jevais'];
+$mysqli= new mysqli("localhost","root","","phpsearch");
+
+$sql = "SELECT * FROM `jevais_articles` WHERE `title` = '$result_of_search' ";
+
+$result = $mysqli->query($sql);
+while ($row = $result -> fetch_assoc()) {
+            // Получаем массив с строками которые нужно выводить
+           echo "<h3>".$row['title']."</h3>"."<br>";
+           echo '<a href="article.php?id='.$row["id"].'">show</a>';
+        }
+
 }
 
 //names of availiable articles 
@@ -81,7 +93,7 @@ print_data($result_data);
 
 $mysqli->close(); //close connection to db 
 
-search_result($result_of_search);
+search_result();
 
 
 ?>
