@@ -26,7 +26,26 @@
        $connection =mysqli_connect('localhost','root','','phpsearch');
        $article=mysqli_query($connection,"SELECT * FROM  `jevais_articles` WHERE id   =  "  .(int) $_GET['id'] );
        $art = mysqli_fetch_assoc($article)
-        
+ 
+ //search article in db       
+ function search_result(){
+   //connect to data base 
+
+   $result_of_search = $_GET['result_search_in_jevais'];
+$mysqli= new mysqli("localhost","root","","phpsearch");
+
+$sql = "SELECT * FROM `jevais_articles` WHERE `title` = '$result_of_search' ";
+
+$result = $mysqli->query($sql);
+while ($row = $result -> fetch_assoc()) {
+            // Получаем массив с строками которые нужно выводить
+           echo "<h3>".$row['title']."</h3>"."<br>";
+           echo '<a href="article.php?id='.$row["id"].'">show</a>';
+        }
+
+}
+
+search_result(); 
        
 ?>       
 
